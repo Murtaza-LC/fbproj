@@ -1,0 +1,18 @@
+{
+  "name": "market-compare-functions",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "playwright": "1.46.0"
+  },
+  "scripts": {
+    "postinstall": "PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install chromium",
+    "serve": "firebase emulators:start",
+    "health": "node -e \"console.log('ok')\""
+  }
+}

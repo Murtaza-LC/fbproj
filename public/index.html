@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Amazon ↔ Flipkart Comparator</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <h1>Amazon ↔ Flipkart Comparator</h1>
+    <div class="row" style="width:100%">
+      <input id="amazonUrl" class="stretch" placeholder="Amazon listing URL (e.g., https://www.amazon.in/s?k=trending+mobile+phones)"/>
+      <input id="flipkartUrl" class="stretch" placeholder="Flipkart listing URL (e.g., https://www.flipkart.com/search?q=trending+mobile+phones)"/>
+      <select id="maxPages">
+        <option value="1">Pages: 1</option>
+        <option value="2">Pages: 2</option>
+        <option value="3">Pages: 3</option>
+      </select>
+      <label class="row" style="gap:6px"><input id="pdp" type="checkbox"/> Enrich PDP</label>
+      <button id="run" class="btn">Scrape</button>
+      <label class="inline"><input type="checkbox" id="dbg"> Debug</label>
+      <label class="inline"><input type="checkbox" id="dbgshot"> Screenshot</label>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card" style="margin-bottom:16px">
+    <div class="toolbar">
+      <span class="pill" data-sort="discount">Most discount</span>
+      <span class="pill" data-sort="lowest">Lowest price</span>
+      <span class="pill" data-sort="highest">Highest price</span>
+      <span class="pill" data-sort="reviews">Most reviews</span>
+      <input id="search" class="stretch" placeholder="Search products (e.g., 5G, 256GB, Samsung)"/>
+    </div>
+  </section>
+
+  <section class="card" style="margin-bottom:16px">
+    <div class="head"><strong>Matches (Amazon ↔ Flipkart)</strong><span id="matchCount" class="muted"></span></div>
+    <div id="matches" class="match-grid"></div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <div class="head"><strong>Amazon</strong><span id="countAmazon" class="muted"></span></div>
+      <div id="listAmazon" class="list"></div>
+    </section>
+    <section class="card">
+      <div class="head"><strong>Flipkart</strong><span id="countFlipkart" class="muted"></span></div>
+      <div id="listFlipkart" class="list"></div>
+    </section>
+  </div>
+
+  <pre id="debugOut" class="debug-out" style="display:none;"></pre>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
